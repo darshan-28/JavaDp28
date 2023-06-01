@@ -4,50 +4,54 @@
 //Note:  A palindrome number is a number that is same after reverse.
 
 import java.util.Scanner;
-class EvenPalindromeOrOddPalindrome1
+class checkEvenPalindrome
 {
-	public static int PallendromeOrNot(int a)
-	{
-		int rem=0;
-		int sum=0;
-		int temp=a;
-
-		while(a>0)
+	public static int reverse(int num)
 		{
-			rem=a%10;
-			sum=(sum*10)+rem;
-			a=a/10;
-		}
-		if (sum==temp)
-		{
-			System.out.println("Pallendrome");
-		}
-		else
-		{
-			System.out.println("Not a Pallendrome");
-		}
-		 
-		return a;		
-	}
-	public static int EvenOrOdd(int num)
-		{
-			if (num%2==0)
+		    int reverse=0;
+			while (num!=0)
 			{
-				System.out.println("It is an Even Palindrome Number = "+num);
+				reverse =reverse*10+(num%10);
+				num=num/10;
 			}
-			else
-				{
-					System.out.println("It is an Odd Palindrome Number = "+num);
-				}
-			return num;
+		return reverse;	
 		}
+	public static boolean checkPalindrome(int num)
+	{
+		if (num==reverse(num))
+		{
+			return true;
+		}
+		return false;
+	}
+
+	public static boolean checkEvenOdd(int num)
+	{
+		if (num%2==0)
+		{
+			return true;
+		}
+		return false;
+	}
+
 	public static void main(String[] args) 
 	{
 		Scanner sc= new Scanner (System.in);
-        int a = sc.nextInt();
-		int num=a;
-		PallendromeOrNot(a);
-		EvenOrOdd(num);
-		 
+        int ip = sc.nextInt();
+
+		if (checkPalindrome(ip))
+		{
+			if (checkEvenOdd(ip))
+			{
+				System.out.println("Even Palindrome");
+			}
+		else
+			{
+				System.out.println("Odd Palindrome");	
+			}  
+		}else{
+			System.out.println("Not a Palindrome");	    
+		}
+
 	}
 }
