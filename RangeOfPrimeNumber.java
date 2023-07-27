@@ -1,21 +1,6 @@
 import java.util.Scanner;
 class RangeOfPrimeNumber
 {
-	public static void main(String[] args) 
-	{
-		Scanner sc=new Scanner (System.in);
-		System.out.println("Staring Number");
-		int start = sc.nextInt();
-		System.out.println("Ending Number");
-		int end   = sc.nextInt();
-		for (int i=start;i<end ;i++ )
-		{
-			if (isPrime(i))
-			{
-				System.out.println(i);
-			}
-		}
-	}
 
 	public static boolean isPrime(int num)
 	{
@@ -29,4 +14,22 @@ class RangeOfPrimeNumber
 		}
 		return true;
 	}
+
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner (System.in);
+		System.out.println("Staring Number");
+		int start = sc.nextInt();
+		System.out.println("Ending Number");
+		int end   = sc.nextInt();
+		for (int i=start;i<end ;i++ )
+		{			 
+			if (isPrime(i))
+			{					 
+				System.out.println(i);				 
+			}
+		}
+	}
+
+	 
 }
